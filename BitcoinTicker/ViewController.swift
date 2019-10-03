@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
 
     //Pre-setup IBOutlets
+    @IBOutlet weak var bitcoinpiker: UILabel!
+    @IBOutlet weak var bitcoinpiker2: UILabel!
     @IBOutlet weak var bitcoinPriceLabel: UILabel!
     @IBOutlet weak var bitcoinPriceLabel2: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
@@ -99,8 +101,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             DispatchQueue.main.async {
                 if(component == 0) {
                     self.bitcoinPriceLabel.text = str
+                    self.bitcoinpiker.text = piker
                 } else {
                 self.bitcoinPriceLabel2.text = str
+                self.bitcoinpiker2.text = piker
                 }
             }
             
