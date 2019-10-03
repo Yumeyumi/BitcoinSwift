@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     //Pre-setup IBOutlets
     @IBOutlet weak var bitcoinPriceLabel: UILabel!
+    @IBOutlet weak var bitcoinPriceLabel2: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
 
@@ -33,7 +34,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //Number of columns of data
     func numberOfComponents(in pickView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     // The number of rows of data
@@ -45,8 +46,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return currencyArray[row]
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        getCurrency(piker: currencyArray[row])
+     let celda = component
+        getCurrency(piker: currencyArray[row], component: celda)
     }
     
     
@@ -56,7 +59,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //    //MARK: - Networking URLSesion
 //    /***************************************************************/
 //    
-    func getCurrency(piker : String) {
+    func getCurrency(piker : String, component : Int) {
    guard let  url = URL(string: baseURL + piker) else {
     print ("No hay url")
     return }
@@ -86,14 +89,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         do {
             let json = try JSONSerialization.jsonObject(with: data!, options: [ ]) as! Dictionary<String, Any>
-            
-            guard let finalData = json["bid"] else {
+           print(json)
+
+            guard let bid = json["bid"] else {
                 print ("Could not get bid form json")
                 return
             }
-            let str = String(describing: finalData)
+            let str = String(describing: bid)
             DispatchQueue.main.async {
-                self.bitcoinPriceLabel.text = str
+                if(component == 0) {
+                    self.bitcoinPriceLabel.text = str
+                } else {
+                self.bitcoinPriceLabel2.text = str
+                }
             }
             
         } catch {
