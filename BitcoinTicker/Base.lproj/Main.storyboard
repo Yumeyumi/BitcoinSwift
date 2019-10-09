@@ -31,11 +31,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1V-SU-qjY">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="txK-OS-RfU">
-                                                <rect key="frame" x="68" y="21" width="240" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="Qou-Fd-Nxi">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                             </imageView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Qou-Fd-Nxi" secondAttribute="bottom" id="Pkp-F5-SUv"/>
+                                            <constraint firstItem="Qou-Fd-Nxi" firstAttribute="top" secondItem="c1V-SU-qjY" secondAttribute="top" id="TBp-cl-CO5"/>
+                                            <constraint firstItem="Qou-Fd-Nxi" firstAttribute="leading" secondItem="c1V-SU-qjY" secondAttribute="leading" id="TUj-4V-Wf5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qou-Fd-Nxi" secondAttribute="trailing" id="nOU-dO-mrh"/>
+                                        </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-Z1-Pie">
                                         <rect key="frame" x="37" y="344" width="300" height="50"/>
@@ -49,7 +54,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pH-Oa-tQ1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pH-Oa-tQ1">
                                                 <rect key="frame" x="120" y="0.0" width="180" height="50"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" red="0.94509803920000002" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,7 +82,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg7-Dt-rnc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg7-Dt-rnc">
                                                 <rect key="frame" x="120" y="0.0" width="180" height="50"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" red="0.94509803921568625" green="0.65490196078431373" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,6 +102,12 @@
                                             <constraint firstItem="Jg7-Dt-rnc" firstAttribute="leading" secondItem="Pq0-1B-wHF" secondAttribute="trailing" id="wbS-Ft-RHe"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TYPES OF CURRENCIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCC-k3-Trf">
+                                        <rect key="frame" x="0.0" y="434" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.52941176470588236" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -106,12 +117,15 @@
                                     <constraint firstAttribute="bottom" secondItem="c1V-SU-qjY" secondAttribute="bottom" constant="497" id="MZA-3a-YSD"/>
                                     <constraint firstItem="c1V-SU-qjY" firstAttribute="leading" secondItem="ZGz-pe-AwG" secondAttribute="leading" id="Vbe-QX-jV0"/>
                                     <constraint firstItem="dJO-he-DLO" firstAttribute="leading" secondItem="H4g-qN-MbT" secondAttribute="leading" constant="37" id="YEf-N8-gO4"/>
+                                    <constraint firstAttribute="trailing" secondItem="LCC-k3-Trf" secondAttribute="trailing" id="bNR-Xt-pv7"/>
                                     <constraint firstItem="c1V-SU-qjY" firstAttribute="centerX" secondItem="dJO-he-DLO" secondAttribute="centerX" id="edf-D0-9Dw"/>
                                     <constraint firstItem="dJO-he-DLO" firstAttribute="top" secondItem="c1V-SU-qjY" secondAttribute="bottom" constant="63" id="gwg-Zm-1IM"/>
+                                    <constraint firstItem="LCC-k3-Trf" firstAttribute="leading" secondItem="H4g-qN-MbT" secondAttribute="leading" id="hUG-8y-e6s"/>
                                     <constraint firstItem="ZGz-pe-AwG" firstAttribute="bottom" secondItem="H4g-qN-MbT" secondAttribute="bottomMargin" id="jjQ-YR-brj"/>
                                     <constraint firstAttribute="trailing" secondItem="dJO-he-DLO" secondAttribute="trailing" constant="38" id="k1b-Y5-SPw"/>
                                     <constraint firstItem="Wti-Z1-Pie" firstAttribute="top" secondItem="dJO-he-DLO" secondAttribute="bottom" constant="61" id="kDL-ur-N8H"/>
                                     <constraint firstItem="c1V-SU-qjY" firstAttribute="leading" secondItem="H4g-qN-MbT" secondAttribute="leading" id="phX-mq-cCo"/>
+                                    <constraint firstItem="LCC-k3-Trf" firstAttribute="top" secondItem="Wti-Z1-Pie" secondAttribute="bottom" constant="40" id="tqc-7R-0rh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -136,6 +150,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bitcoin" width="335" height="335"/>
+        <image name="Bitcoin" width="860" height="430"/>
     </resources>
 </document>
